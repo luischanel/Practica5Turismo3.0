@@ -39,7 +39,8 @@ public class MainActivity extends AppCompatActivity {
 
         listView.setAdapter(new ArrayAdapter<String>(getSupportActionBar().
                 getThemedContext(), android.R.layout.simple_list_item_1, opciones));
-
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction().replace(R.id.contenedorFragment, new InicioFragment()).commit();
         final ActionBar ab = getSupportActionBar();
         if (ab !=null) {
             ab.setHomeAsUpIndicator(R.drawable.ic_menu_white_24dp);
